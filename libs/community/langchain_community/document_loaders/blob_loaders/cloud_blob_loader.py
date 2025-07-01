@@ -135,6 +135,7 @@ class CloudBlobLoader(BlobLoader):
 
         for blob in loader.yield_blobs():
             print(blob)
+
     """  # noqa: E501
 
     def __init__(
@@ -148,22 +149,22 @@ class CloudBlobLoader(BlobLoader):
     ) -> None:
         """Initialize with a url and how to glob over it.
 
-        Use [CloudPathLib](https://cloudpathlib.drivendata.org/).
+        Use `CloudPathLib <https://cloudpathlib.drivendata.org/>`__.
 
         Args:
             url: Cloud URL to load from.
-                 Supports s3://, az://, gs://, file:// schemes.
-                 If no scheme is provided, it is assumed to be a local file.
-                 If a path to a file is provided, glob/exclude/suffixes are ignored.
+                Supports ``s3://``, ``az://``, ``gs://``, ``file://`` schemes.
+                If no scheme is provided, it is assumed to be a local file.
+                If a path to a file is provided, glob/exclude/suffixes are ignored.
             glob: Glob pattern relative to the specified path
-                  by default set to pick up all non-hidden files
+                by default set to pick up all non-hidden files
             exclude: patterns to exclude from results, use glob syntax
             suffixes: Provide to keep only files with these suffixes
-                      Useful when wanting to keep files with different suffixes
-                      Suffixes must include the dot, e.g. ".txt"
-            show_progress: If true, will show a progress bar as the files are loaded.
-                           This forces an iteration through all matching files
-                           to count them prior to loading them.
+                Useful when wanting to keep files with different suffixes
+                Suffixes must include the dot, e.g. ``.txt``
+            show_progress: If ``True``, will show a progress bar as the files are loaded.
+                This forces an iteration through all matching files
+                to count them prior to loading them.
 
         Examples:
 
@@ -188,6 +189,7 @@ class CloudBlobLoader(BlobLoader):
                     glob="**/*.txt",
                     exclude=["**/*.py", "**/*.pyc"]
                 )
+
         """  # noqa: E501
         from cloudpathlib import AnyPath
 
@@ -257,12 +259,12 @@ class CloudBlobLoader(BlobLoader):
 
         Args:
             path: path like object to file to be read
-                  Supports s3://, az://, gs://, file:// schemes.
-                  If no scheme is provided, it is assumed to be a local file.
+                Supports ``s3://``, ``az://``, ``gs://``, ``file://`` schemes.
+                If no scheme is provided, it is assumed to be a local file.
             encoding: Encoding to use if decoding the bytes into a string
             mime_type: if provided, will be set as the mime-type of the data
-            guess_type: If True, the mimetype will be guessed from the file extension,
-                        if a mime-type was not provided
+            guess_type: If ``True``, the mimetype will be guessed from the file
+                extension, if a mime-type was not provided
             metadata: Metadata to associate with the blob
 
         Returns:

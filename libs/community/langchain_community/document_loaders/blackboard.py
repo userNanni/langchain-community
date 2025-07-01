@@ -16,11 +16,13 @@ class BlackboardLoader(WebBaseLoader):
 
     This loader is not compatible with all Blackboard courses. It is only
     compatible with courses that use the new Blackboard interface.
+
     To use this loader, you must have the BbRouter cookie. You can get this
     cookie by logging into the course and then copying the value of the
     BbRouter cookie from the browser's developer tools.
 
     Example:
+
         .. code-block:: python
 
             from langchain_community.document_loaders import BlackboardLoader
@@ -50,14 +52,15 @@ class BlackboardLoader(WebBaseLoader):
         Args:
             blackboard_course_url: Blackboard course url.
             bbrouter: BbRouter cookie.
-            load_all_recursively: If True, load all documents recursively.
+            load_all_recursively: If ``True``, load all documents recursively.
             basic_auth: Basic auth credentials.
             cookies: Cookies.
             continue_on_failure: whether to continue loading the sitemap if an error
                 occurs loading a url, emitting a warning instead of raising an
-                exception. Setting this to True makes the loader more robust, but also
-                may result in missing data. Default: False
-            show_progress: whether to show a progress bar while loading. Default: True
+                exception. Setting this to ``True`` makes the loader more robust, but
+                also may result in missing data. Default: ``False``
+            show_progress: whether to show a progress bar while loading. Default:
+                ``True``
 
         Raises:
             ValueError: If blackboard course url is invalid.

@@ -31,7 +31,7 @@ class TranscriptFormat(Enum):
 class AssemblyAIAudioTranscriptLoader(BaseLoader):
     """Load AssemblyAI audio transcripts.
 
-    It uses the AssemblyAI API to transcribe audio files
+    Uses the AssemblyAI API to transcribe audio files
     and loads the transcribed text into one or more Documents,
     depending on the specified format.
 
@@ -78,7 +78,7 @@ class AssemblyAIAudioTranscriptLoader(BaseLoader):
     def lazy_load(self) -> Iterator[Document]:
         """Transcribes the audio file and loads the transcript into documents.
 
-        It uses the AssemblyAI API to transcribe the audio file and blocks until
+        Uses the AssemblyAI API to transcribe the audio file and blocks until
         the transcription is finished.
         """
         transcript = self.transcriber.transcribe(self.file_path)
@@ -111,7 +111,7 @@ class AssemblyAIAudioLoaderById(BaseLoader):
     """
     Load AssemblyAI audio transcripts.
 
-    It uses the AssemblyAI API to get an existing transcription
+    Uses the AssemblyAI API to get an existing transcription
     and loads the transcribed text into one or more Documents,
     depending on the specified format.
 

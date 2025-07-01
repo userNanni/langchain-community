@@ -12,7 +12,7 @@ class ArxivLoader(BaseLoader):
 
     Setup:
         Install ``arxiv`` and ``PyMuPDF`` packages.
-        ``PyMuPDF`` transforms PDF files downloaded from the arxiv.org site
+        ``PyMuPDF`` transforms PDF files downloaded from the `arxiv.org site <https://arxiv.org/>`__
         into the text format.
 
         .. code-block:: bash
@@ -132,11 +132,11 @@ class ArxivLoader(BaseLoader):
         self, query: str, doc_content_chars_max: Optional[int] = None, **kwargs: Any
     ):
         """Initialize with search query to find documents in the Arxiv.
-        Supports all arguments of `ArxivAPIWrapper`.
+        Supports all arguments of `ArxivAPIWrapper <https://python.langchain.com/api_reference/community/utilities/langchain_community.utilities.arxiv.ArxivAPIWrapper.html>`__.
 
         Args:
-            query: free text which used to find documents in the Arxiv
-            doc_content_chars_max: cut limit for the length of a document's content
+            query: Free text which used to find documents in the Arxiv
+            doc_content_chars_max: Cut limit for the length of a document's content
         """  # noqa: E501
 
         self.query = query

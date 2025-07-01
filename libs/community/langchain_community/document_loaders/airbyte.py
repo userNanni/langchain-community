@@ -26,9 +26,9 @@ class AirbyteCDKLoader(BaseLoader):
             source_class: The source connector class.
             stream_name: The name of the stream to load.
             record_handler: A function that takes in a record and an optional id and
-                returns a Document. If None, the record will be used as the document.
-                Defaults to None.
-            state: The state to pass to the source connector. Defaults to None.
+                returns a Document. If ``None``, the record will be used as the
+                document. Defaults to ``None``.
+            state: The state to pass to the source connector. Defaults to ``None``.
         """
         from airbyte_cdk.models.airbyte_protocol import AirbyteRecordMessage
         from airbyte_cdk.sources.embedded.base_integration import (
@@ -79,9 +79,9 @@ class AirbyteHubspotLoader(AirbyteCDKLoader):
             config: The config to pass to the source connector.
             stream_name: The name of the stream to load.
             record_handler: A function that takes in a record and an optional id and
-                returns a Document. If None, the record will be used as the document.
-                Defaults to None.
-            state: The state to pass to the source connector. Defaults to None.
+                returns a Document. If ``None``, the record will be used as the
+                document. Defaults to ``None``.
+            state: The state to pass to the source connector. Defaults to ``None``.
         """
         source_class = guard_import(
             "source_hubspot", pip_name="airbyte-source-hubspot"
@@ -111,9 +111,9 @@ class AirbyteStripeLoader(AirbyteCDKLoader):
             config: The config to pass to the source connector.
             stream_name: The name of the stream to load.
             record_handler: A function that takes in a record and an optional id and
-                returns a Document. If None, the record will be used as the document.
-                Defaults to None.
-            state: The state to pass to the source connector. Defaults to None.
+                returns a Document. If ``None``, the record will be used as the
+                document. Defaults to ``None``.
+            state: The state to pass to the source connector. Defaults to ``None``.
         """
         source_class = guard_import(
             "source_stripe", pip_name="airbyte-source-stripe"
@@ -143,9 +143,9 @@ class AirbyteTypeformLoader(AirbyteCDKLoader):
             config: The config to pass to the source connector.
             stream_name: The name of the stream to load.
             record_handler: A function that takes in a record and an optional id and
-                returns a Document. If None, the record will be used as the document.
-                Defaults to None.
-            state: The state to pass to the source connector. Defaults to None.
+                returns a Document. If ``None``, the record will be used as the
+                document. Defaults to ``None``.
+            state: The state to pass to the source connector. Defaults to ``None``.
         """
         source_class = guard_import(
             "source_typeform", pip_name="airbyte-source-typeform"
@@ -175,9 +175,9 @@ class AirbyteZendeskSupportLoader(AirbyteCDKLoader):
             config: The config to pass to the source connector.
             stream_name: The name of the stream to load.
             record_handler: A function that takes in a record and an optional id and
-                returns a Document. If None, the record will be used as the document.
-                Defaults to None.
-            state: The state to pass to the source connector. Defaults to None.
+                returns a Document. If ``None``, the record will be used as the
+                document. Defaults to ``None``.
+            state: The state to pass to the source connector. Defaults to ``None``.
         """
         source_class = guard_import(
             "source_zendesk_support", pip_name="airbyte-source-zendesk-support"
@@ -207,9 +207,9 @@ class AirbyteShopifyLoader(AirbyteCDKLoader):
             config: The config to pass to the source connector.
             stream_name: The name of the stream to load.
             record_handler: A function that takes in a record and an optional id and
-                returns a Document. If None, the record will be used as the document.
-                Defaults to None.
-            state: The state to pass to the source connector. Defaults to None.
+                returns a Document. If ``None``, the record will be used as the
+                document. Defaults to ``None``.
+            state: The state to pass to the source connector. Defaults to ``None``.
         """
         source_class = guard_import(
             "source_shopify", pip_name="airbyte-source-shopify"
@@ -239,9 +239,9 @@ class AirbyteSalesforceLoader(AirbyteCDKLoader):
             config: The config to pass to the source connector.
             stream_name: The name of the stream to load.
             record_handler: A function that takes in a record and an optional id and
-                returns a Document. If None, the record will be used as the document.
-                Defaults to None.
-            state: The state to pass to the source connector. Defaults to None.
+                returns a Document. If ``None``, the record will be used as the
+                document. Defaults to ``None``.
+            state: The state to pass to the source connector. Defaults to ``None``.
         """
         source_class = guard_import(
             "source_salesforce", pip_name="airbyte-source-salesforce"
@@ -271,9 +271,9 @@ class AirbyteGongLoader(AirbyteCDKLoader):
             config: The config to pass to the source connector.
             stream_name: The name of the stream to load.
             record_handler: A function that takes in a record and an optional id and
-                returns a Document. If None, the record will be used as the document.
-                Defaults to None.
-            state: The state to pass to the source connector. Defaults to None.
+                returns a Document. If ``None``, the record will be used as the
+                document. Defaults to ``None``.
+            state: The state to pass to the source connector. Defaults to ``None``.
         """
         source_class = guard_import(
             "source_gong", pip_name="airbyte-source-gong"

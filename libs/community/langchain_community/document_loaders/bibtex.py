@@ -16,9 +16,9 @@ class BibtexLoader(BaseLoader):
 
     Each document represents one entry from the bibtex file.
 
-    If a PDF file is present in the `file` bibtex field, the original PDF
+    If a PDF file is present in the ``file`` bibtex field, the original PDF
     is loaded into the document text. If no such file entry is present,
-    the `abstract` field is used instead.
+    the ``abstract`` field is used instead.
     """
 
     def __init__(
@@ -35,9 +35,9 @@ class BibtexLoader(BaseLoader):
 
         Args:
             file_path: Path to the bibtex file.
-            parser: The parser to use. If None, a default parser is used.
-            max_docs: Max number of associated documents to load. Use -1 means
-                           no limit.
+            parser: The parser to use. If ``None``, a default parser is used.
+            max_docs: Max number of associated documents to load. Using ``-1`` means no
+                limit.
             max_content_chars: Maximum number of characters to load from the PDF.
             load_extra_metadata: Whether to load extra metadata from the PDF.
             file_pattern: Regex pattern to match the file name in the bibtex.
@@ -76,10 +76,12 @@ class BibtexLoader(BaseLoader):
     def lazy_load(self) -> Iterator[Document]:
         """Load bibtex file using bibtexparser and get the article texts plus the
         article metadata.
-        See https://bibtexparser.readthedocs.io/en/master/
+
+        See the `BibtexParser docs <https://bibtexparser.readthedocs.io/en/main/>`__ for
+        more info.
 
         Returns:
-            a list of documents with the document.page_content in text format
+            a list of documents with the ``document.page_content`` in text format
         """
         try:
             import fitz  # noqa: F401

@@ -8,8 +8,8 @@ from langchain_community.document_loaders.base import BaseLoader
 class BrowserbaseLoader(BaseLoader):
     """Load pre-rendered web pages using a headless browser hosted on Browserbase.
 
-    Depends on `browserbase` and `playwright` packages.
-    Get your API key from https://browserbase.com
+    Depends on ``browserbase`` and ``playwright`` packages.
+    Get your API key from `Browserbase <https://browserbase.com/>`__.
     """
 
     def __init__(

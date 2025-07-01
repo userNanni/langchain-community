@@ -217,7 +217,7 @@ class AsyncHtmlLoader(BaseLoader):
         return Document(page_content=text, metadata=metadata)
 
     def lazy_load(self) -> Iterator[Document]:
-        """Lazy load text from the url(s) in web_path."""
+        """Lazy load text from the url(s) in ``web_path``."""
         results: List[str]
         try:
             # Raises RuntimeError if there is no current event loop.
@@ -237,7 +237,7 @@ class AsyncHtmlLoader(BaseLoader):
             yield self._to_document(self.web_paths[i], text)
 
     async def alazy_load(self) -> AsyncIterator[Document]:
-        """Lazy load text from the url(s) in web_path."""
+        """Lazy load text from the url(s) in ``web_path``."""
         async for url, text in self._lazy_fetch_all(
             self.web_paths, self.preserve_order
         ):

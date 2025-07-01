@@ -13,12 +13,11 @@ class AirtableLoader(BaseLoader):
         """Initialize with API token and the IDs for table and base.
 
         Args:
-            api_token: Airtable API token.
-            table_id: Airtable table ID.
-            base_id:
-            kwargs: Additional parameters to pass to Table.all(). Refer to the
-                pyairtable documentation for available options:
-                https://pyairtable.readthedocs.io/en/latest/api.html#pyairtable.Table.all
+            api_token: Airtable `API token <https://support.airtable.com/docs/creating-personal-access-tokens>`__.
+            table_id: Airtable `table ID <https://support.airtable.com/docs/finding-airtable-ids#finding-base-table-and-view-ids-from-urls>`__.
+            base_id: Airtable `base ID <https://support.airtable.com/docs/finding-airtable-ids#finding-base-table-and-view-ids-from-urls>`__.
+            kwargs: Additional parameters to pass to ``Table.all()``. Refer to the
+                ``pyairtable`` documentation for available `options <https://pyairtable.readthedocs.io/en/latest/api.html#pyairtable.Table.all>`__.
         """  # noqa: E501
         self.api_token = api_token
         self.table_id = table_id

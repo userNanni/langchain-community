@@ -9,12 +9,11 @@ class AzureAIDataLoader(BaseLoader):
     """Load from Azure AI Data."""
 
     def __init__(self, url: str, glob: Optional[str] = None):
-        """Initialize with URL to a data asset or storage location
-        ."""
+        """Initialize with URL to a data asset or storage location."""
         self.url = url
         """URL to the data asset or storage location."""
         self.glob_pattern = glob
-        """Optional glob pattern to select files. Defaults to None."""
+        """Optional glob pattern to select files. Defaults to ``None``."""
 
     def lazy_load(self) -> Iterator[Document]:
         """A lazy loader for Documents."""

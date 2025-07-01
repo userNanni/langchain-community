@@ -10,9 +10,11 @@ class BaiduBOSDirectoryLoader(BaseLoader):
 
     def __init__(self, conf: Any, bucket: str, prefix: str = ""):
         """Initialize with BOS config, bucket and prefix.
-        :param conf(BosConfig): BOS config.
-        :param bucket(str): BOS bucket.
-        :param prefix(str): prefix.
+
+        Args:
+            conf(BosConfig): BOS config.
+            bucket(str): BOS bucket.
+            prefix(str): prefix.
         """
         self.conf = conf
         self.bucket = bucket

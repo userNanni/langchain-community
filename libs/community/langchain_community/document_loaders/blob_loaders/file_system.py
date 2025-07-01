@@ -49,6 +49,7 @@ class FileSystemBlobLoader(BlobLoader):
         loader = FileSystemBlobLoader("/path/to/directory")
         for blob in loader.yield_blobs():
             print(blob)  # noqa: T201
+
     """  # noqa: E501
 
     def __init__(
@@ -64,16 +65,16 @@ class FileSystemBlobLoader(BlobLoader):
 
         Args:
             path: Path to directory to load from or path to file to load.
-                  If a path to a file is provided, glob/exclude/suffixes are ignored.
+                If a path to a file is provided, glob/exclude/suffixes are ignored.
             glob: Glob pattern relative to the specified path
-                  by default set to pick up all non-hidden files
+                by default set to pick up all non-hidden files
             exclude: patterns to exclude from results, use glob syntax
             suffixes: Provide to keep only files with these suffixes
-                      Useful when wanting to keep files with different suffixes
-                      Suffixes must include the dot, e.g. ".txt"
+                Useful when wanting to keep files with different suffixes
+                Suffixes must include the dot, e.g. ``.txt``
             show_progress: If true, will show a progress bar as the files are loaded.
-                           This forces an iteration through all matching files
-                           to count them prior to loading them.
+                This forces an iteration through all matching files
+                to count them prior to loading them.
 
         Examples:
 

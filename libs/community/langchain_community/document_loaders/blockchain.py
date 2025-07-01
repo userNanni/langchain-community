@@ -37,22 +37,22 @@ class BlockchainType(Enum):
 class BlockchainDocumentLoader(BaseLoader):
     """Load elements from a blockchain smart contract.
 
-    See supported blockchains here: https://python.langchain.com/v0.2/api_reference/community/document_loaders/langchain_community.document_loaders.blockchain.BlockchainType.html
+    See supported blockchains `here <https://python.langchain.com/v0.2/api_reference/community/document_loaders/langchain_community.document_loaders.blockchain.BlockchainType.html>`__.
 
     If no BlockchainType is specified, the default is Ethereum mainnet.
 
     The Loader uses the Alchemy API to interact with the blockchain.
-    ALCHEMY_API_KEY environment variable must be set to use this loader.
+    ``ALCHEMY_API_KEY`` environment variable must be set to use this loader.
 
     The API returns 100 NFTs per request and can be paginated using the
-    startToken parameter.
+    ``startToken`` parameter.
 
-    If get_all_tokens is set to True, the loader will get all tokens
+    If ``get_all_tokens`` is set to ``True``, the loader will get all tokens
     on the contract.  Note that for contracts with a large number of tokens,
     this may take a long time (e.g. 10k tokens is 100 requests).
-    Default value is false for this reason.
+    Default value is ``False`` for this reason.
 
-    The max_execution_time (sec) can be set to limit the execution time
+    The ``max_execution_time`` (sec) can be set to limit the execution time
     of the loader.
 
     Future versions of this loader can:
@@ -74,7 +74,7 @@ class BlockchainDocumentLoader(BaseLoader):
         Args:
             contract_address: The address of the smart contract.
             blockchainType: The blockchain type.
-            api_key: The Alchemy API key.
+            api_key: The ``ALCHEMY_API_KEY``.
             startToken: The start token for pagination.
             get_all_tokens: Whether to get all tokens on the contract.
             max_execution_time: The maximum execution time (sec).

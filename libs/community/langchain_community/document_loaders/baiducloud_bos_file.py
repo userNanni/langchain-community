@@ -16,9 +16,11 @@ class BaiduBOSFileLoader(BaseLoader):
 
     def __init__(self, conf: Any, bucket: str, key: str):
         """Initialize with BOS config, bucket and key name.
-        :param conf(BceClientConfiguration): BOS config.
-        :param bucket(str): BOS bucket.
-        :param key(str): BOS file key.
+
+        Args:
+            conf(BceClientConfiguration): BOS config.
+            bucket(str): BOS bucket.
+            key(str): BOS file key.
         """
         self.conf = conf
         self.bucket = bucket

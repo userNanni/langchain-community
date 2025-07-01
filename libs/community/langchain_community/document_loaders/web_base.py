@@ -168,11 +168,11 @@ class WebBaseLoader(BaseLoader):
             default_parser: Default parser to use for BeautifulSoup.
             requests_kwargs: kwargs for requests
             raise_for_status: Raise an exception if http status code denotes an error.
-            bs_get_text_kwargs: kwargs for beatifulsoup4 get_text
+            bs_get_text_kwargs: kwargs for beatifulsoup4 ``get_text()``
             bs_kwargs: kwargs for beatifulsoup4 web page parsing
             show_progress: Show progress bar when loading pages.
             trust_env: set to True if using proxy to make web requests, for example
-                using http(s)_proxy environment variables. Defaults to False.
+                using ``http(s)_proxy`` environment variables. Defaults to ``False``.
         """
         # web_path kept for backwards-compatibility.
         if web_path and web_paths:
@@ -301,7 +301,7 @@ class WebBaseLoader(BaseLoader):
 
     @staticmethod
     def _check_parser(parser: str) -> None:
-        """Check that parser is valid for bs4."""
+        """Check that parser is valid for ``bs4``."""
         valid_parsers = ["html.parser", "lxml", "xml", "lxml-xml", "html5lib"]
         if parser not in valid_parsers:
             raise ValueError(
@@ -370,7 +370,7 @@ class WebBaseLoader(BaseLoader):
         return self._scrape(self.web_path, parser=parser, bs_kwargs=self.bs_kwargs)
 
     def lazy_load(self) -> Iterator[Document]:
-        """Lazy load text from the url(s) in web_path."""
+        """Lazy load text from the url(s) in ``web_path``."""
         for path in self.web_paths:
             soup = self._scrape(path, bs_kwargs=self.bs_kwargs)
             text = soup.get_text(**self.bs_get_text_kwargs)
@@ -378,7 +378,7 @@ class WebBaseLoader(BaseLoader):
             yield Document(page_content=text, metadata=metadata)
 
     async def alazy_load(self) -> AsyncIterator[Document]:
-        """Async lazy load text from the url(s) in web_path."""
+        """Async lazy load text from the url(s) in ``web_path``."""
         results = await self.ascrape_all(self.web_paths)
         for path, soup in zip(self.web_paths, results):
             text = soup.get_text(**self.bs_get_text_kwargs)
@@ -394,7 +394,7 @@ class WebBaseLoader(BaseLoader):
         ),
     )
     def aload(self) -> List[Document]:  # type: ignore[override]
-        """Load text from the urls in web_path async into Documents."""
+        """Load text from the urls in ``web_path`` async into Documents."""
 
         results = self.scrape_all(self.web_paths)
         docs = []

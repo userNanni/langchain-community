@@ -14,21 +14,21 @@ class AthenaLoader(BaseLoader):
     """Load documents from `AWS Athena`.
 
     Each document represents one row of the result.
-    - By default, all columns are written into the `page_content` of the document
-    and none into the `metadata` of the document.
-    - If `metadata_columns` are provided then these columns are written
-    into the `metadata` of the document while the rest of the columns
-    are written into the `page_content` of the document.
+    - By default, all columns are written into the ``page_content`` of the document
+    and none into the ``metadata`` of the document.
+    - If ``metadata_columns`` are provided then these columns are written
+    into the ``metadata`` of the document while the rest of the columns
+    are written into the ``page_content`` of the document.
 
-    To authenticate, the AWS client uses this method to automatically load credentials:
-    https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html
+    To authenticate, the AWS client uses `this method <https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html>`__
+    to automatically load credentials:
 
     If a specific credential profile should be used, you must pass
-    the name of the profile from the ~/.aws/credentials file that is to be used.
+    the name of the profile from the ``~/.aws/credentials`` file that is to be used.
 
     Make sure the credentials / roles used have the required policies to
     access the Amazon Textract service.
-    """
+    """  # noqa: E501
 
     def __init__(
         self,
@@ -45,7 +45,7 @@ class AthenaLoader(BaseLoader):
             database: Athena database.
             s3_output_uri: Athena output path.
             profile_name: Optional. AWS credential profile, if profiles are being used.
-            metadata_columns: Optional. Columns written to Document `metadata`.
+            metadata_columns: Optional. Columns written to Document ``metadata``.
         """
         self.query = query
         self.database = database

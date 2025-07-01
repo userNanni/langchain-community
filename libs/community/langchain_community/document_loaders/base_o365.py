@@ -82,9 +82,10 @@ class O365BaseLoader(BaseLoader, BaseModel):
     settings: _O365Settings = Field(default_factory=_O365Settings)  # type: ignore[arg-type]
     """Settings for the Office365 API client."""
     auth_with_token: bool = False
-    """Whether to authenticate with a token or not. Defaults to False."""
+    """Whether to authenticate with a token or not. Defaults to ``False``."""
     chunk_size: Union[int, str] = CHUNK_SIZE
-    """Number of bytes to retrieve from each api call to the server. int or 'auto'."""
+    """Number of bytes to retrieve from each api call to the server.
+    ``int`` or ``auto``."""
     recursive: bool = False
     """Should the loader recursively load subfolders?"""
     modified_since: Optional[datetime] = None
@@ -94,30 +95,33 @@ class O365BaseLoader(BaseLoader, BaseModel):
     """
     Provide custom handlers for MimeTypeBasedParser.
 
-    Pass a dictionary mapping either file extensions (like "doc", "pdf", etc.) 
-    or MIME types (like "application/pdf", "text/plain", etc.) to parsers. 
+    Pass a dictionary mapping either file extensions (like ``doc``, ``pdf``, etc.) 
+    or MIME types (like ``application/pdf``, ``text/plain``, etc.) to parsers. 
     Note that you must use either file extensions or MIME types exclusively and 
     cannot mix them.
 
     Do not include the leading dot for file extensions.
     
     Example using file extensions:
-    ```python
+
+    code-block:: python
+
         handlers = {
             "doc": MsWordParser(),
             "pdf": PDFMinerParser(),
             "txt": TextParser()
         }
-    ```
     
     Example using MIME types:
-    ```python
+
+    code-block:: python
+
         handlers = {
             "application/msword": MsWordParser(),
             "application/pdf": PDFMinerParser(),
             "text/plain": TextParser()
         }
-    ```
+
     """
 
     _blob_parser: BaseBlobParser = PrivateAttr()

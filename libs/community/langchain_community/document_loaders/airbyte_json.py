@@ -12,7 +12,7 @@ class AirbyteJSONLoader(BaseLoader):
     """Load local `Airbyte` json files."""
 
     def __init__(self, file_path: Union[str, Path]):
-        """Initialize with a file path. This should start with '/tmp/airbyte_local/'."""
+        """Initialize with a file path. This should start with ``/tmp/airbyte_local/``."""  # noqa: E501
         self.file_path = file_path
         """Path to the directory containing the json files."""
 
