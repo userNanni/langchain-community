@@ -136,11 +136,13 @@ class ChatOllama(BaseChatModel, _OllamaCommon):
             content = ""
             images = []
             if isinstance(message.content, str):
-                content = message.content
+                content = message.content.replace("[INST]", "").replace("[/INST]", "")
             else:
                 for content_part in cast(List[Dict], message.content):
                     if content_part.get("type") == "text":
-                        content += f"\n{content_part['text']}"
+                        content += f"\n{content_part['text']}".replace(
+                            "[INST]", ""
+                        ).replace("[/INST]", "")
                     elif content_part.get("type") == "image_url":
                         image_url = None
                         temp_image_url = content_part.get("image_url")
