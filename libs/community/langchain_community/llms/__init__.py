@@ -20,7 +20,6 @@ access to the large language model (**LLM**) APIs and services.
 
 from typing import Any, Callable, Dict, Type
 
-from langchain_core._api.deprecation import warn_deprecated
 from langchain_core.language_models.llms import BaseLLM
 
 
@@ -166,18 +165,6 @@ def _import_databricks() -> Type[BaseLLM]:
     from langchain_community.llms.databricks import Databricks
 
     return Databricks
-
-
-# deprecated / only for back compat - do not add to __all__
-def _import_databricks_chat() -> Any:
-    warn_deprecated(
-        since="0.0.22",
-        removal="1.0",
-        alternative_import="langchain_community.chat_models.ChatDatabricks",
-    )
-    from langchain_community.chat_models.databricks import ChatDatabricks
-
-    return ChatDatabricks
 
 
 def _import_deepinfra() -> Type[BaseLLM]:
@@ -336,18 +323,6 @@ def _import_mlflow() -> Type[BaseLLM]:
     from langchain_community.llms.mlflow import Mlflow
 
     return Mlflow
-
-
-# deprecated / only for back compat - do not add to __all__
-def _import_mlflow_chat() -> Any:
-    warn_deprecated(
-        since="0.0.22",
-        removal="1.0",
-        alternative_import="langchain_community.chat_models.ChatMlflow",
-    )
-    from langchain_community.chat_models.mlflow import ChatMlflow
-
-    return ChatMlflow
 
 
 def _import_mlflow_ai_gateway() -> Type[BaseLLM]:
@@ -1024,7 +999,6 @@ def get_type_to_cls_dict() -> Dict[str, Callable[[], Type[BaseLLM]]]:
         "ctransformers": _import_ctransformers,
         "ctranslate2": _import_ctranslate2,
         "databricks": _import_databricks,
-        "databricks-chat": _import_databricks_chat,  # deprecated / only for back compat
         "deepinfra": _import_deepinfra,
         "deepsparse": _import_deepsparse,
         "edenai": _import_edenai,
@@ -1048,7 +1022,6 @@ def get_type_to_cls_dict() -> Dict[str, Callable[[], Type[BaseLLM]]]:
         "textgen": _import_textgen,
         "minimax": _import_minimax,
         "mlflow": _import_mlflow,
-        "mlflow-chat": _import_mlflow_chat,  # deprecated / only for back compat
         "mlflow-ai-gateway": _import_mlflow_ai_gateway,
         "mlx_pipeline": _import_mlx_pipeline,
         "modal": _import_modal,

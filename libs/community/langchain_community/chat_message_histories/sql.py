@@ -14,7 +14,6 @@ from typing import (
     cast,
 )
 
-from langchain_core._api import deprecated, warn_deprecated
 from sqlalchemy import Column, Integer, Text, delete, select
 
 try:
@@ -127,9 +126,9 @@ class SQLChatMessageHistory(BaseChatMessageHistory):
 
             from langchain_community.chat_message_histories import SQLChatMessageHistory
 
-            # create sync sql message history by connection_string
+            # create sync sql message history by connection
             message_history = SQLChatMessageHistory(
-                session_id='foo', connection_string='sqlite///:memory.db'
+                session_id='foo', connection='sqlite///:memory.db'
             )
             message_history.add_message(HumanMessage("hello"))
             message_history.message
@@ -146,15 +145,9 @@ class SQLChatMessageHistory(BaseChatMessageHistory):
 
     """
 
-    @property
-    @deprecated("0.2.2", removal="1.0", alternative="session_maker")
-    def Session(self) -> Union[scoped_session, async_sessionmaker]:
-        return self.session_maker
-
     def __init__(
         self,
         session_id: str,
-        connection_string: Optional[str] = None,
         table_name: str = "message_store",
         session_id_field_name: str = "session_id",
         custom_message_converter: Optional[BaseMessageConverter] = None,
@@ -166,8 +159,6 @@ class SQLChatMessageHistory(BaseChatMessageHistory):
 
         Args:
             session_id: Indicates the id of the same session.
-            connection_string: String parameter configuration for connecting
-                to the database.
             table_name: Table name used to save data.
             session_id_field_name: The name of field of `session_id`.
             custom_message_converter: Custom message converter for converting
@@ -177,21 +168,6 @@ class SQLChatMessageHistory(BaseChatMessageHistory):
             engine_args: Additional configuration for creating database engines.
             async_mode: Whether it is an asynchronous connection.
         """
-        assert not (connection_string and connection), (
-            "connection_string and connection are mutually exclusive"
-        )
-        if connection_string:
-            global _warned_once_already
-            if not _warned_once_already:
-                warn_deprecated(
-                    since="0.2.2",
-                    removal="1.0",
-                    name="connection_string",
-                    alternative="connection",
-                )
-                _warned_once_already = True
-            connection = connection_string
-            self.connection_string = connection_string
         if isinstance(connection, str):
             self.async_mode = async_mode
             if async_mode:

@@ -7,7 +7,6 @@ from typing import Any, AsyncIterator, Dict, Iterator, List, Optional, Sequence,
 
 import aiohttp
 import requests
-from langchain_core._api import deprecated
 from langchain_core.documents import Document
 
 from langchain_community.document_loaders.base import BaseLoader
@@ -384,23 +383,3 @@ class WebBaseLoader(BaseLoader):
             text = soup.get_text(**self.bs_get_text_kwargs)
             metadata = _build_metadata(soup, path)
             yield Document(page_content=text, metadata=metadata)
-
-    @deprecated(
-        since="0.3.14",
-        removal="1.0",
-        message=(
-            "See API reference for updated usage: "
-            "https://python.langchain.com/api_reference/community/document_loaders/langchain_community.document_loaders.web_base.WebBaseLoader.html"  # noqa: E501
-        ),
-    )
-    def aload(self) -> List[Document]:  # type: ignore[override]
-        """Load text from the urls in web_path async into Documents."""
-
-        results = self.scrape_all(self.web_paths)
-        docs = []
-        for path, soup in zip(self.web_paths, results):
-            text = soup.get_text(**self.bs_get_text_kwargs)
-            metadata = _build_metadata(soup, path)
-            docs.append(Document(page_content=text, metadata=metadata))
-
-        return docs
