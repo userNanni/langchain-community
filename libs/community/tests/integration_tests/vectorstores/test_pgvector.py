@@ -5,14 +5,14 @@ from typing import Any, Dict, Generator, List, Type, Union
 
 import pytest
 import sqlalchemy
-from langchain_core.documents import Document
-from sqlalchemy.dialects import postgresql
-from sqlalchemy.orm import Session
-
 from langchain_community.vectorstores.pgvector import (
     SUPPORTED_OPERATORS,
     PGVector,
 )
+from langchain_core.documents import Document
+from sqlalchemy.dialects import postgresql
+from sqlalchemy.orm import Session
+
 from tests.integration_tests.vectorstores.fake_embeddings import FakeEmbeddings
 from tests.integration_tests.vectorstores.fixtures.filtering_test_cases import (
     DOCUMENTS,

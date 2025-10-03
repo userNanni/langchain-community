@@ -3,6 +3,10 @@
 from typing import Any, Dict, List, Type
 
 import pytest
+from langchain_community.chat_models.cloudflare_workersai import (
+    ChatCloudflareWorkersAI,
+    _convert_messages_to_cloudflare_messages,
+)
 from langchain_core.language_models import BaseChatModel
 from langchain_core.messages import (
     AIMessage,
@@ -12,11 +16,6 @@ from langchain_core.messages import (
     ToolMessage,
 )
 from langchain_tests.unit_tests import ChatModelUnitTests
-
-from langchain_community.chat_models.cloudflare_workersai import (
-    ChatCloudflareWorkersAI,
-    _convert_messages_to_cloudflare_messages,
-)
 
 
 class TestChatCloudflareWorkersAI(ChatModelUnitTests):

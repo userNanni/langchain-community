@@ -1,6 +1,7 @@
 from typing import Dict, Tuple
 
 import pytest as pytest
+from langchain_community.query_constructors.hanavector import HanaTranslator
 from langchain_core.structured_query import (
     Comparator,
     Comparison,
@@ -8,8 +9,6 @@ from langchain_core.structured_query import (
     Operator,
     StructuredQuery,
 )
-
-from langchain_community.query_constructors.hanavector import HanaTranslator
 
 DEFAULT_TRANSLATOR = HanaTranslator()
 

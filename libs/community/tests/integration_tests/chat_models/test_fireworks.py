@@ -4,10 +4,9 @@ import sys
 from typing import cast
 
 import pytest
+from langchain_community.chat_models.fireworks import ChatFireworks
 from langchain_core.messages import BaseMessage, HumanMessage, SystemMessage
 from langchain_core.outputs import ChatGeneration, ChatResult, LLMResult
-
-from langchain_community.chat_models.fireworks import ChatFireworks
 
 if sys.version_info < (3, 9):
     pytest.skip("fireworks-ai requires Python > 3.8", allow_module_level=True)

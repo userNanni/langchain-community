@@ -1,5 +1,4 @@
 import pytest
-
 from langchain_community.llms.openai import OpenAI
 from langchain_community.utils.openai import is_openai_v1
 

@@ -1,7 +1,6 @@
 from typing import Any
 
 import pytest
-
 from langchain_community.vectorstores.redis import (
     RedisNum as Num,
 )

@@ -4,12 +4,12 @@ import os
 from typing import List
 
 import pytest
-from langchain_core.messages import AIMessage, BaseMessage, HumanMessage, SystemMessage
-
-from langchain_community.chat_models import ChatAnthropic
 from langchain_community.chat_models.anthropic import (
     convert_messages_to_prompt_anthropic,
 )
+from langchain_core.messages import AIMessage, BaseMessage, HumanMessage, SystemMessage
+
+from langchain_community.chat_models import ChatAnthropic
 
 os.environ["ANTHROPIC_API_KEY"] = "foo"
 

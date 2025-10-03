@@ -7,11 +7,11 @@ from contextlib import contextmanager
 from typing import Any, Generator, Iterable, List, Optional
 
 import pytest
+from langchain_community.graph_vectorstores.base import Node
 from langchain_core.documents import Document
 from langchain_core.embeddings import Embeddings
 
 from langchain_community.graph_vectorstores import CassandraGraphVectorStore
-from langchain_community.graph_vectorstores.base import Node
 from langchain_community.graph_vectorstores.links import (
     METADATA_LINKS_KEY,
     Link,

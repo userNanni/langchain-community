@@ -3,7 +3,6 @@ import os
 from unittest import mock
 
 import pytest
-
 from langchain_community.chat_models.azure_openai import AzureChatOpenAI
 
 

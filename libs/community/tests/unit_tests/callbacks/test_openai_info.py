@@ -3,12 +3,12 @@ from uuid import uuid4
 
 import numpy as np
 import pytest
+from langchain_community.llms.openai import BaseOpenAI
 from langchain_core.messages import AIMessage
 from langchain_core.outputs import ChatGeneration, LLMResult
 from langchain_core.utils.pydantic import get_fields
 
 from langchain_community.callbacks import OpenAICallbackHandler
-from langchain_community.llms.openai import BaseOpenAI
 
 
 @pytest.fixture

@@ -4,8 +4,6 @@ import os
 from typing import Any, Dict, List, Optional
 
 import pytest
-from langchain_core.documents import Document
-
 from langchain_community.vectorstores.redis import (
     Redis,
     RedisFilter,
@@ -13,6 +11,8 @@ from langchain_community.vectorstores.redis import (
     RedisText,
 )
 from langchain_community.vectorstores.redis.filters import RedisFilterExpression
+from langchain_core.documents import Document
+
 from tests.integration_tests.vectorstores.fake_embeddings import (
     ConsistentFakeEmbeddings,
     FakeEmbeddings,

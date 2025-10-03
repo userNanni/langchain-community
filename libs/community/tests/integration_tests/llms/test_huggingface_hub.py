@@ -3,8 +3,8 @@
 from pathlib import Path
 
 import pytest
-
 from langchain_community.llms.huggingface_hub import HuggingFaceHub
+
 from langchain_community.llms.loading import load_llm
 from tests.integration_tests.llms.utils import assert_llm_equality
 

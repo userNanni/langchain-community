@@ -1,7 +1,6 @@
 """Test Cloudflare Workers AI embeddings."""
 
 import responses
-
 from langchain_community.embeddings.cloudflare_workersai import (
     CloudflareWorkersAIEmbeddings,
 )

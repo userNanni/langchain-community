@@ -1,5 +1,4 @@
 import pytest
-
 from langchain_community.document_loaders.bigquery import BigQueryLoader
 
 try:

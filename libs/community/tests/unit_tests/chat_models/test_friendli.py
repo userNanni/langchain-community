@@ -3,10 +3,10 @@
 from unittest.mock import AsyncMock, MagicMock, Mock
 
 import pytest
+from langchain_community.adapters.openai import aenumerate
 from pydantic import SecretStr
 from pytest import CaptureFixture, MonkeyPatch
 
-from langchain_community.adapters.openai import aenumerate
 from langchain_community.chat_models import ChatFriendli
 
 

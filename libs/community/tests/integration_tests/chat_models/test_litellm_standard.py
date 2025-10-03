@@ -2,10 +2,9 @@
 
 from typing import Type
 
+from langchain_community.chat_models.litellm import ChatLiteLLM
 from langchain_core.language_models import BaseChatModel
 from langchain_tests.integration_tests import ChatModelIntegrationTests
-
-from langchain_community.chat_models.litellm import ChatLiteLLM
 
 
 class TestLiteLLMStandard(ChatModelIntegrationTests):

@@ -6,8 +6,8 @@ import os
 from typing import TYPE_CHECKING
 
 import pytest
-
 from langchain_community.storage.astradb import AstraDBByteStore, AstraDBStore
+
 from langchain_community.utilities.astradb import SetupMode
 
 if TYPE_CHECKING:

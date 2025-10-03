@@ -3,6 +3,7 @@
 from unittest.mock import patch
 
 import pytest
+from langchain_community.llms.openai import BaseOpenAI
 from langchain_core.callbacks.manager import CallbackManager, trace_as_chain_group
 from langchain_core.outputs import LLMResult
 from langchain_core.tracers.langchain import LangChainTracer, wait_for_all_tracers
@@ -11,7 +12,6 @@ from langsmith import utils as ls_utils
 
 from langchain_community.callbacks import get_openai_callback
 from langchain_community.callbacks.manager import get_bedrock_anthropic_callback
-from langchain_community.llms.openai import BaseOpenAI
 
 
 def test_callback_manager_configure_context_vars(

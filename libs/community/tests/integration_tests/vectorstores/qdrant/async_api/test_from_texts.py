@@ -2,10 +2,10 @@ import uuid
 from typing import Optional
 
 import pytest
+from langchain_community.vectorstores.qdrant import QdrantException
 from langchain_core.documents import Document
 
 from langchain_community.vectorstores import Qdrant
-from langchain_community.vectorstores.qdrant import QdrantException
 from tests.integration_tests.vectorstores.fake_embeddings import (
     ConsistentFakeEmbeddings,
 )

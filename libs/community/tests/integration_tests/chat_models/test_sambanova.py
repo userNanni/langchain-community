@@ -1,9 +1,8 @@
-from langchain_core.messages import AIMessage, HumanMessage
-
 from langchain_community.chat_models.sambanova import (
     ChatSambaNovaCloud,
     ChatSambaStudio,
 )
+from langchain_core.messages import AIMessage, HumanMessage
 
 
 def test_chat_sambanova_cloud() -> None:

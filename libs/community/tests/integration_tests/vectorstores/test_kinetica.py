@@ -2,9 +2,9 @@ import os
 from typing import List
 
 import pytest
+from langchain_community.embeddings.openai import OpenAIEmbeddings
 from langchain_core.documents import Document
 
-from langchain_community.embeddings.openai import OpenAIEmbeddings
 from langchain_community.vectorstores import (
     DistanceStrategy,
     Kinetica,

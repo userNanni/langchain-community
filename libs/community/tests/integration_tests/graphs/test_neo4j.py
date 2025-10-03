@@ -1,15 +1,15 @@
 import os
 
-from langchain_core.documents import Document
-
-from langchain_community.graphs import Neo4jGraph
-from langchain_community.graphs.graph_document import GraphDocument, Node, Relationship
 from langchain_community.graphs.neo4j_graph import (
     BASE_ENTITY_LABEL,
     node_properties_query,
     rel_properties_query,
     rel_query,
 )
+from langchain_core.documents import Document
+
+from langchain_community.graphs import Neo4jGraph
+from langchain_community.graphs.graph_document import GraphDocument, Node, Relationship
 
 test_data = [
     GraphDocument(

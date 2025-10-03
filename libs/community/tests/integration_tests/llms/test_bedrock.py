@@ -8,9 +8,8 @@ import os
 from typing import TYPE_CHECKING, Any
 
 import pytest
-from langchain_core.callbacks import AsyncCallbackHandler
-
 from langchain_community.llms.bedrock import Bedrock
+from langchain_core.callbacks import AsyncCallbackHandler
 
 if TYPE_CHECKING:
     from botocore.client import BaseClient

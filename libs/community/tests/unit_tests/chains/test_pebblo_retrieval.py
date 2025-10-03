@@ -6,6 +6,7 @@ from typing import Any, List
 from unittest.mock import Mock
 
 import pytest
+from langchain_community.vectorstores.pinecone import Pinecone
 from langchain_core.callbacks import (
     AsyncCallbackManagerForRetrieverRun,
     CallbackManagerForRetrieverRun,
@@ -23,7 +24,6 @@ from langchain_community.chains.pebblo_retrieval.models import (
     ChainInput,
     SemanticContext,
 )
-from langchain_community.vectorstores.pinecone import Pinecone
 from tests.unit_tests.llms.fake_llm import FakeLLM
 
 

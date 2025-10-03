@@ -12,6 +12,10 @@ from typing import Optional
 from unittest.mock import MagicMock, Mock, patch
 
 import pytest
+from langchain_community.chat_models.vertexai import (
+    _parse_chat_history,
+    _parse_examples,
+)
 from langchain_core.messages import (
     AIMessage,
     AIMessageChunk,
@@ -21,10 +25,6 @@ from langchain_core.messages import (
 from langchain_core.outputs import LLMResult
 
 from langchain_community.chat_models import ChatVertexAI
-from langchain_community.chat_models.vertexai import (
-    _parse_chat_history,
-    _parse_examples,
-)
 
 model_names_to_test = [None, "codechat-bison", "chat-bison", "gemini-pro"]
 

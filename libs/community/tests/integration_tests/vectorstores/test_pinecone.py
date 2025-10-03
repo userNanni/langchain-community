@@ -6,10 +6,10 @@ from typing import TYPE_CHECKING, List
 
 import numpy as np
 import pytest
+from langchain_community.vectorstores.pinecone import Pinecone
 from langchain_core.documents import Document
 
 from langchain_community.embeddings import OpenAIEmbeddings
-from langchain_community.vectorstores.pinecone import Pinecone
 
 if TYPE_CHECKING:
     import pinecone

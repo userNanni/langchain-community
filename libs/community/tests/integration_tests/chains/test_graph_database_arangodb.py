@@ -2,10 +2,11 @@
 
 from typing import Any
 
+from langchain_community.llms.openai import OpenAI
+
 from langchain_community.chains.graph_qa.arangodb import ArangoGraphQAChain
 from langchain_community.graphs import ArangoGraph
 from langchain_community.graphs.arangodb_graph import get_arangodb_client
-from langchain_community.llms.openai import OpenAI
 
 
 def populate_arangodb_database(db: Any) -> None:

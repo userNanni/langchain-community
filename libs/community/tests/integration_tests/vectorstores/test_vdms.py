@@ -7,10 +7,10 @@ import os
 from typing import TYPE_CHECKING
 
 import pytest
+from langchain_community.vectorstores.vdms import VDMS_Client, embedding2bytes
 from langchain_core.documents import Document
 
 from langchain_community.vectorstores import VDMS
-from langchain_community.vectorstores.vdms import VDMS_Client, embedding2bytes
 from tests.integration_tests.vectorstores.fake_embeddings import (
     ConsistentFakeEmbeddings,
     FakeEmbeddings,

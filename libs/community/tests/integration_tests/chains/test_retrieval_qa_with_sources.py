@@ -2,10 +2,10 @@
 
 from langchain.chains import RetrievalQAWithSourcesChain
 from langchain.chains.loading import load_chain
+from langchain_community.embeddings.openai import OpenAIEmbeddings
 from langchain_text_splitters.character import CharacterTextSplitter
 
 from langchain_community.document_loaders import DirectoryLoader
-from langchain_community.embeddings.openai import OpenAIEmbeddings
 from langchain_community.llms import OpenAI
 from langchain_community.vectorstores import FAISS
 

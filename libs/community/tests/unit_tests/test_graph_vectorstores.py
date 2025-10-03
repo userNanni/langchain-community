@@ -1,11 +1,11 @@
 import pytest
-from langchain_core.documents import Document
-
 from langchain_community.graph_vectorstores.base import (
     Node,
     _documents_to_nodes,
     _texts_to_nodes,
 )
+from langchain_core.documents import Document
+
 from langchain_community.graph_vectorstores.links import Link
 
 

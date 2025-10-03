@@ -1,5 +1,6 @@
 from typing import Dict, Tuple
 
+from langchain_community.query_constructors.neo4j import Neo4jTranslator
 from langchain_core.structured_query import (
     Comparator,
     Comparison,
@@ -7,8 +8,6 @@ from langchain_core.structured_query import (
     Operator,
     StructuredQuery,
 )
-
-from langchain_community.query_constructors.neo4j import Neo4jTranslator
 
 DEFAULT_TRANSLATOR = Neo4jTranslator()
 

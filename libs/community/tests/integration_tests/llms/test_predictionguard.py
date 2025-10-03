@@ -1,7 +1,6 @@
 """Test Prediction Guard API wrapper."""
 
 import pytest
-
 from langchain_community.llms.predictionguard import PredictionGuard
 
 

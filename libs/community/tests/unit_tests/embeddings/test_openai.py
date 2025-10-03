@@ -2,7 +2,6 @@ import os
 from unittest.mock import patch
 
 import pytest
-
 from langchain_community.embeddings.openai import OpenAIEmbeddings
 
 os.environ["OPENAI_API_KEY"] = "foo"

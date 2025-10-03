@@ -7,10 +7,10 @@ from typing import List, cast
 
 import numpy as np
 import pytest
+from langchain_community.vectorstores.singlestoredb import SingleStoreDB
 from langchain_core.documents import Document
 from langchain_core.embeddings import Embeddings
 
-from langchain_community.vectorstores.singlestoredb import SingleStoreDB
 from langchain_community.vectorstores.utils import DistanceStrategy
 from tests.integration_tests.vectorstores.fake_embeddings import FakeEmbeddings
 

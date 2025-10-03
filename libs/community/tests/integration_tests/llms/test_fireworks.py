@@ -3,9 +3,8 @@
 from typing import Generator
 
 import pytest
-from langchain_core.outputs import LLMResult
-
 from langchain_community.llms.fireworks import Fireworks
+from langchain_core.outputs import LLMResult
 
 
 @pytest.fixture

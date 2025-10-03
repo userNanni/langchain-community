@@ -19,7 +19,6 @@ import uuid
 from typing import TYPE_CHECKING, AsyncIterator, Iterator
 
 import pytest
-
 from langchain_community.document_loaders.astradb import AstraDBLoader
 
 if TYPE_CHECKING:

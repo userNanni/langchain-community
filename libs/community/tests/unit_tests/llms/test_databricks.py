@@ -4,12 +4,12 @@ from pathlib import Path
 from typing import Any, Dict
 
 import pytest
-from pytest import MonkeyPatch
-
 from langchain_community.llms.databricks import (
     Databricks,
     _load_pickled_fn_from_hex_string,
 )
+from pytest import MonkeyPatch
+
 from langchain_community.llms.loading import load_llm
 from tests.integration_tests.llms.utils import assert_llm_equality
 

@@ -1,9 +1,8 @@
 from typing import Any, Optional
 
 import requests
-from pytest import MonkeyPatch
-
 from langchain_community.llms.ollama import Ollama
+from pytest import MonkeyPatch
 
 
 def mock_response_stream() -> requests.Response:

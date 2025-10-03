@@ -3,6 +3,7 @@
 from typing import Any, Optional
 
 import pytest
+from langchain_community.chat_models.openai import ChatOpenAI
 from langchain_core.callbacks import CallbackManager
 from langchain_core.messages import AIMessage, BaseMessage, HumanMessage, SystemMessage
 from langchain_core.outputs import (
@@ -13,7 +14,6 @@ from langchain_core.outputs import (
 from langchain_core.prompts import ChatPromptTemplate
 from pydantic import BaseModel, Field
 
-from langchain_community.chat_models.openai import ChatOpenAI
 from tests.unit_tests.callbacks.fake_callback_handler import FakeCallbackHandler
 
 
