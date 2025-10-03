@@ -23,7 +23,7 @@ def amazon_retriever(
 ) -> AmazonKnowledgeBasesRetriever:
     return AmazonKnowledgeBasesRetriever(
         knowledge_base_id="test_kb_id",
-        retrieval_config=mock_retriever_config,  # type: ignore[arg-type]
+        retrieval_config=mock_retriever_config,
         client=mock_client,
     )
 
@@ -58,7 +58,7 @@ def test_get_relevant_documents(
     }
     documents: List[Document] = amazon_retriever._get_relevant_documents(
         query,
-        run_manager=None,  # type: ignore[arg-type]
+        run_manager=None,
     )
 
     assert len(documents) == 3
